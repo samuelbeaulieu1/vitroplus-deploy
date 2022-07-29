@@ -3,8 +3,9 @@ FROM node:18-alpine
 WORKDIR /node/app
 
 COPY app/package.json /node/app
+COPY app/package-lock.json /node/app
 
-RUN npm install
+RUN npm ci --silent
 
 COPY /app /node/app
 
